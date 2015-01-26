@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{url_for('static', filename='images/icon.png')}}" />
+
+    <title>{% block title %}{% endblock%}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='vendor/foundation/css/foundation.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/jquery/dist/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/modernizr/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/foundation/js/foundation.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/foundation/js/foundation/foundation.alert.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/main.js') }}"></script>
+  </head>
+  <body>
+    <div class="header fixed">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="/">Civil service</a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <ul class="right">
+            <li><a href="#">Services</a></li>
+            <li><a href="{{url_for('notices')}}">Notices</a></li>
+            <li><a href="#">Votes and debates</a></li>
+            <li><a href="#">Your councillors</a></li>
+            <li><a href="#">Buses and trams</a></li>
+            <li><a href="#">Data</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+    <div>
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </body>
+</html>
