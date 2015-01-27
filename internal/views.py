@@ -5,7 +5,7 @@ import requests
 
 from flask import Flask, request, redirect, render_template, url_for, session, flash, abort, current_app
 from flask_oauthlib.client import OAuth, OAuthException
-from localgov import app, oauth, forms
+from internal import app, oauth, forms
 
 registry = oauth.remote_app(
     'registry',
