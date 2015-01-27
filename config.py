@@ -7,7 +7,6 @@ class Config(object):
     REGISTRY_CONSUMER_SECRET = os.environ['REGISTRY_CONSUMER_SECRET']
     BASE_URL = os.environ['BASE_URL']
 
-
 class DevelopmentConfig(Config):
     DEBUG = True
 
