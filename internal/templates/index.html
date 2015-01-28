@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Welcome{% endblock %}
+{% block title %}Official{% endblock %}
 {% block content %}
-    <img src="{{url_for('static', filename='images/organisaitons.png')}}" width="100%"/>
+    <a href="{{url_for('breakdown')}}">
+        <img src="{{url_for('static', filename='images/organisaitons.png')}}" width="100%"/>
+    </a>
 {% endblock %}

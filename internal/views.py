@@ -27,26 +27,11 @@ def get_registry_oauth_token():
 #views
 @app.route("/")
 def index():
-    notices = _get_notices(max=3)
-    return render_template('index.html', fullscreen=True, notices=notices)
+    return render_template('index.html')
 
-@app.route("/parking-permit")
-def parking_permit_start():
-    session.clear()
-    return render_template('parking-permit-start.html')
-
-@app.route("/parking-permit/information")
-def parking_permit_information():
-    if not session.get('registry_token', False):
-        session['resume_url'] = 'parking_permit_information'
-        return redirect(url_for('verify'))
-    return render_template('parking-permit-information.html')
-
-@app.route("/parking-permit/done")
-def parking_permit_done():
-    session.clear()
-    return render_template('parking-permit-done.html')
-
+@app.route("/breakdown")
+def breakdown():
+    return render_template('breakdown.html')
 
 @app.route('/verify')
 def verify():
@@ -54,7 +39,6 @@ def verify():
     if os.environ.get('OAUTHLIB_INSECURE_TRANSPORT', False) == 'true':
         _scheme = 'http'
     return registry.authorize(callback=url_for('verified', _scheme=_scheme, _external=True))
-
 
 @app.route('/verified')
 def verified():
@@ -71,26 +55,3 @@ def verified():
         return redirect(url_for(session.get('resume_url')))
     else:
         return redirect(url_for('index'))
-
-
-@app.route("/notices")
-def notices():
-    # go via request for notices rather than registry as they're totally
-    # public i think?
-    # also should filter for notices issued by this council
-    notices = _get_notices()
-    return render_template('notices.html', notices=notices)
-
-
-
-def _get_notices(max=None):
-    notices = []
-    url = '%s/notices' % current_app.config['REGISTRY_BASE_URL']
-    if max:
-        url = "%s?max=%d" % (url, max)
-
-    response = requests.get(url)
-    if response.status_code == 200:
-        notices = response.json()
-    return notices
-
