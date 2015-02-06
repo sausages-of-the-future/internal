@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+
+<header id="global-header">
+	<div class="header-wrapper">
+          <div class="header-logo">
+            <a href="https://www.gov.uk/" title="Go to the organisation registry homepage" id="logo" class="content">
+              <img src="{{url_for('static', filename='images/crests/crestwhite.png')}}" width="35" height="31" alt=""> </a>
+
+
+
+         </div>
+                   	<div class="textlogo">Benefits Claimant Tool</div>
+
+    </div>
+
+
+<div id="sub-header">
+
+    	<div class="header-wrapper">
+         
+              <div class="textname">Claimant: <span class="boldheadertext">John Smith</span><span class="employment-status">Status: Long term unemployed</span>
+              </div>
+              <div class="takenotes">
+					      		<a href=""><img class="icon-big"src="{{url_for('static', filename='images/graphics/pencil-icon.png')}}">Take Notes</a>
+				</div>
+		</div>
+</header>
+
+
+<!-- <div id="main-body">
+
+		<div class="header">
+			<div id="h1half">
+				<h1>Organisations</h1>
+			</div>
+
+		</div> -->
+
+		<div id="main-content">
+
+	
+		<div class="grid-row">
+			    	<div class="column-quarter-todo">
+
+			      		<h2>To discuss at next meeting: <span class="nextmeetingtime">23 February, 14:30</span></h2>
+			      		<div class="add-item"> + Add item</div>
+			      		<div class="menu-todo">
+				      		<ul>
+					      		<li><a href="">Discuss reoccurring health issues ⟶</a></li>
+								<li><a href="">Possible rehab this coming may ⟶</a></li>
+								<li><a href="">Recent interview problems ⟶</a></li>
+								<li><a href="">Job application mistakes ⟶</a></li>
+								<li><a href="">Encouraging responses ⟶</a></li>
+				      		</ul>
+			      		</div>
+			    	</div>
+			    	<div class="column-quarter-info">
+
+			      		<h2>Information and documents</h2>
+			      		<div class="menu-info">
+				      		<ul>
+					      		<li><a href=""><img class="icon"src="{{url_for('static', filename='images/graphics/note-history-icon.png')}}">Full note history</a></li>
+					      		<li><a href=""><img class="icon"src="{{url_for('static', filename='images/graphics/person-icon.png')}}">Personal information</a></li>
+								<li><a href=""><img class="icon"src="{{url_for('static', filename='images/graphics/CV-icon.png')}}">CV</a></li>
+								<li><a href=""><img class="icon"src="{{url_for('static', filename='images/graphics/work-icon.png')}}">Employment history</a></li>
+								<li><a href=""><img class="icon"src="{{url_for('static', filename='images/graphics/Education-icon.png')}}">Education history</a></li>
+								<li><a href=""><img class="icon"src="{{url_for('static', filename='images/graphics/health-icon.png')}}">Health history</a></li>
+				      		</ul>
+			      		</div>
+			    	</div>
+	
+		
+					<div class="column-half">
+					<h2>Progress: Since 4 December 2013</h2>
+			      		<div class="list-progress">
+				      		<ul>
+					      		<li><a href=""><font color="00b55f">1 period of employment</font></a></li>
+					      		<li><a href=""><font color="008080">57 applications</font></a></li>
+								<li><a href=""><font color= "FF4500">8 interviews</font></a></li>
+								<li><a href=""><font color= "8b008b">2 short courses</font></a></li>
+								<li><a href="">36 benefit payments</a></li>
+								<li><a href=""><font color= "red">3 health interventions</font></a></li>
+				      		</ul>
+				      	<h3>Progress timeline</h3>
+
+	      				<div class="benefits-table"> <img class="graphic-table"src="{{url_for('static', filename='images/graphics/benefits-timeline.png')}}"></div>
+					</div>
+		</div>
+
+
+
+  
+
+		<div class="footer">
+          <img class="footer-image" src="{{url_for('static', filename='images/crests/crestgrey.png')}}"> 
+
+
+
+          <p class="footer-text">This information is up to date and maintained by the Department for Work and Pensions</p>
+     	</div>
+
+		
+
+</body>
+</html>
+
+

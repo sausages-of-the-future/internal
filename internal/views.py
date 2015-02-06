@@ -33,6 +33,10 @@ def index():
 def breakdown():
     return render_template('breakdown.html')
 
+@app.route("/claimant")
+def claimant():
+    return render_template('claimant-dashboard.html')
+
 @app.route('/verify')
 def verify():
     _scheme = 'https'
